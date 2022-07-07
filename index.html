@@ -7,7 +7,30 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="container">
+        <!-- begin card-->
+        <div class="card">
+          <h1 class="title" id="title"></h1>
+          <p class="description" id="description"></p>
+        
+          <div class="choices" id="choices"></div>
+
+          <input type="button" value="Responder" id="answer">
+        
+          <div class="answer hidden" id="answer">
+            <p>the right answer is...</p>
+            <p class="comments">some comments</p>
+          </div>
+        
+          <div class="navigation">
+            <input type="button" id="next" value="Next Card">
+          </div>
+        </div>
+        <!-- end card-->
+        </div>
+    </div>
+    
     <script type="module" src="/main.js"></script>
   </body>
 </html>
