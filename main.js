@@ -7,6 +7,9 @@ function nextQuestion(){
 
   document.getElementById('answer').classList.remove('hidden');
   document.getElementById('feedback').classList.add('hidden');
+  document.getElementById('view-comments').classList.add('hidden');
+  document.getElementById('comments').classList.add('hidden');
+
   document.getElementById('message').innerHTML = '';
 
   let card = cards[i];
@@ -43,6 +46,7 @@ document.getElementById('answer').addEventListener('click', function(event){
 
   document.getElementById('answer').classList.add('hidden');
   document.getElementById('next').classList.remove('hidden');
+  document.getElementById('view-comments').classList.remove('hidden');
   document.getElementById('comments').innerHTML = cards[i].comments;
 
   if(choice == cards[i].answer){
@@ -68,7 +72,8 @@ document.getElementById('answer').addEventListener('click', function(event){
   if(i < (cards.length - 1) ){
     i = i + 1;
   }else{
-    console.log('Você concluiu a bateria de questões');
+    let finish = document.getElementById('next');
+    finish.value = 'Você respondeu todas as questẽs!';
   }
 }, false);
 
