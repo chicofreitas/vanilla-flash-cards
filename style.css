@@ -14,3 +14,11 @@
 .box{
   display: block;
 }
+
+.wrong{
+  background-color: crimson;
+}
+
+.right{
+  background-color: palegreen;
+}

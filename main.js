@@ -5,6 +5,10 @@ let i = 0;
 
 function nextQuestion(){
 
+  document.getElementById('answer').classList.remove('hidden');
+  document.getElementById('feedback').classList.add('hidden');
+  document.getElementById('message').innerHTML = '';
+
   let card = cards[i];
 
   document.getElementById('title').innerHTML = card.title;
@@ -21,7 +25,7 @@ function nextQuestion(){
 
       radio.type = 'radio';
       radio.name = 'choice';
-      radio.value = value;
+      radio.value = choices[key];
 
       let radioContainer = document.createElement('div');
       radioContainer.classList.add("box");
@@ -31,16 +35,51 @@ function nextQuestion(){
 
       choicesContainer.append(radioContainer);
     });
-
-    if(i < (cards.length - 1) ){
-      i = i + 1;
-    }else{
-      console.log('Você concluiu a bateria de questões');
-    }
 }
 
 document.getElementById('answer').addEventListener('click', function(event){
   let choice = document.querySelector('input[name="choice"]:checked').value;
+//  console.log(choice == cards[i].answer);
+
+  document.getElementById('answer').classList.add('hidden');
+  document.getElementById('next').classList.remove('hidden');
+  document.getElementById('comments').innerHTML = cards[i].comments;
+
+  if(choice == cards[i].answer){
+
+    let messageBox = document.getElementById('feedback');
+
+    messageBox.classList.remove('hidden');
+    messageBox.classList.remove('wrong');
+    messageBox.classList.add('right');
+
+    document.getElementById('message').innerHTML = 'Você acertou!';
+
+  }else{
+    let messageBox = document.getElementById('feedback');
+
+    messageBox.classList.remove('hidden');
+    messageBox.classList.remove('right');
+    messageBox.classList.add('wrong');
+
+    document.getElementById('message').innerHTML = 'Resposta errada =/.';
+  }
+
+  if(i < (cards.length - 1) ){
+    i = i + 1;
+  }else{
+    console.log('Você concluiu a bateria de questões');
+  }
+}, false);
+
+document.getElementById('start').addEventListener('click', function(){
+  this.classList.add('hidden');
+  document.getElementById('answer').classList.remove('hidden');
+  nextQuestion();
+}, false);
+
+document.getElementById('view-comments').addEventListener('click', function(){
+  document.getElementById('comments').classList.remove('hidden');
 }, false);
 
 document.getElementById('next').addEventListener('click', nextQuestion, false);

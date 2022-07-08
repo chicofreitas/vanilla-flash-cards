@@ -16,15 +16,17 @@
         
           <div class="choices" id="choices"></div>
 
-          <input type="button" value="Responder" id="answer">
+          <input type="button" value="Responder" id="answer" class="hidden">
         
-          <div class="answer hidden" id="answer">
-            <p>the right answer is...</p>
-            <p class="comments">some comments</p>
+          <div class="feedback hidden" id="feedback">
+            <h1 id="message"></h1>
+            <input type="button" id="view-comments" value="Ver comentários da questão.">
+            <p id="comments" class="hidden"></p>
           </div>
         
           <div class="navigation">
-            <input type="button" id="next" value="Next Card">
+            <input type="button" id="start" value="Start">
+            <input type="button" id="next" class="hidden" value="Next Card">
           </div>
         </div>
         <!-- end card-->
