@@ -1,35 +1,10 @@
 import './style.css'
-import {CardsContainer} from './src/assets/cards'
-
-const cards = [
-  {
-  'title': 'A lei no 8112/90 diz que é tudo mentira',
-  'description' : 'Alguma descrição doida',
-  'choices' : {
-      op1 :'Certo',
-      op2 :'Errado'
-  },
-  'answer':'Certo',
-  'comments': 'Some dummy comment...'
-  },
-
-  {
-  'title': 'Segundo card da lei no 8112/90 que diz algo',
-  'description' : 'Alguma descrição doida da segunda pergunta.',
-  'choices' : {
-      '1':'A Lei mente',
-      '2':'A Lei é verdadeira',
-      '3':'Nenuma das alternativas'
-  },
-  'answer':'A Lei é verdadeira',
-  'comments': 'One more dummy comment for the 2nd card...'
-  }
-];
+import {cards} from './src/assets/cards'
 
 let i = 0;
 
 function nextQuestion(){
-  
+
   let card = cards[i];
 
   document.getElementById('title').innerHTML = card.title;
@@ -56,12 +31,16 @@ function nextQuestion(){
 
       choicesContainer.append(radioContainer);
     });
+
+    if(i < (cards.length - 1) ){
+      i = i + 1;
+    }else{
+      console.log('Você concluiu a bateria de questões');
+    }
 }
 
 document.getElementById('answer').addEventListener('click', function(event){
   let choice = document.querySelector('input[name="choice"]:checked').value;
-  console.log(cards[i].answer, choice);
-  i += 1;
 }, false);
 
 document.getElementById('next').addEventListener('click', nextQuestion, false);
