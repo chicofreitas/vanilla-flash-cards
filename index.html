@@ -4,28 +4,43 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="/output.css" rel="stylesheet">
+
     <title>Vite App</title>
   </head>
   <body>
     <div id="app">
-      <div class="container">
+      <div class="container mx-auto">
         <!-- begin card-->
         <div class="card">
           <h1 class="title" id="title"></h1>
-          <p class="description" id="description"></p>
+          <p class="description mt-4" id="description"></p>
         
-          <div class="choices" id="choices"></div>
-
-          <input type="button" value="Responder" id="answer" class="hidden">
+          <div class="choices p-4" id="choices"></div>
         
-          <div class="feedback hidden" id="feedback">
-            <h1 id="message"></h1>
+          <div class="feedback hidden p-10 rounded-md" id="feedback">
+            <h1 id="message" class="text-2xl"></h1>
             <p id="comments" class="hidden"></p>
           </div>
         
-          <div class="navigation">
-            <input type="button" id="start" value="Start">
-            <input type="button" id="next" class="hidden" value="Next Card">
+          <div class="navigation p-10">
+            <button type="button" id="start" class="p-4 rounded-full bg-blue-400">
+              <!-- Start  -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <button type="button" id="answer" class="hidden pt-2 pb-2 pl-4 pr-4 rounded-md bg-blue-400">
+              Responder
+            </button>
+
+            <button type="button" id="next" class="hidden p-4 rounded-full bg-blue-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
         </div>
         <!-- end card-->

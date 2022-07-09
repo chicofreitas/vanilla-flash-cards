@@ -46,7 +46,8 @@ function loadQuestion(card){
   
         let radioContainer = document.createElement('div');
         radioContainer.classList.add("box");
-  
+        radioContainer.classList.add('p-4');
+
         radioContainer.append(radio);
         radioContainer.append(choices[key]);
   
@@ -70,6 +71,7 @@ function answerQuestion(card, choice){
 
     commentsField.innerHTML = card.comments;
 
+    feedbackButton.classList.remove(choice != card.answer);
     feedbackButton.classList.add(choice == card.answer);
     feedbackButton.classList.remove('hidden');
     messageField.innerHTML = messages[choice == card.answer];
