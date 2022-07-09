@@ -15,10 +15,10 @@
   display: block;
 }
 
-.wrong{
+.false{
   background-color: crimson;
 }
 
-.right{
+.true{
   background-color: palegreen;
 }
