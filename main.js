@@ -25,7 +25,7 @@ document.getElementById('answer').addEventListener('click', () => {
   
   answerQuestion(cards[i], choice);
 
-  if(i < (1) ){
+  if(i < (4) ){
     i = i + 1;
   }else{
       let finish = document.getElementById('next');

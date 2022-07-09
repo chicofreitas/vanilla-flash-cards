@@ -42,15 +42,15 @@ function loadQuestion(card){
   
         radio.type = 'radio';
         radio.name = 'choice';
-        radio.value = choices[key];
+        radio.value = key;//choices[key].text;
   
         let radioContainer = document.createElement('div');
         radioContainer.classList.add("box");
         radioContainer.classList.add('p-4');
 
         radioContainer.append(radio);
-        radioContainer.append(choices[key]);
-  
+        radioContainer.append(choices[key].text);
+
         choicesContainer.append(radioContainer);
     });
 }
@@ -70,11 +70,10 @@ function answerQuestion(card, choice){
     commentsField.classList.toggle('hidden');
 
     commentsField.innerHTML = card.comments;
-
-    feedbackButton.classList.remove(choice != card.answer);
-    feedbackButton.classList.add(choice == card.answer);
+    feedbackButton.classList.remove(!card.choices[choice].isCorrect);
+    feedbackButton.classList.add(card.choices[choice].isCorrect);
     feedbackButton.classList.remove('hidden');
-    messageField.innerHTML = messages[choice == card.answer];
+    messageField.innerHTML = messages[card.choices[choice].isCorrect];
 }
 
 export {prepareQuestion, loadQuestion, answerQuestion, nextQuestion}
