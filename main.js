@@ -3,18 +3,28 @@ import {cards} from './src/assets/cards'
 import {
   loadQuestion,
   answerQuestion,
-  nextQuestion
+  nextQuestion,
+  getRandom
 } from './src/components/Question/index'
 
 let i = 0;
+let current;
+let counter = 1;
+let min = 0;
+let max = cards.length;
 
+let counterElement = document.getElementById('counter');
 
 //
 document.getElementById('start').addEventListener('click', function(){
   
   this.classList.add('hidden');
 
-  loadQuestion(cards[i]);
+  counterElement.innerHTML = counter;
+
+  current = cards[ getRandom(min, max) ];
+
+  loadQuestion(current, counter);
 
 }, false);
 
@@ -23,17 +33,23 @@ document.getElementById('answer').addEventListener('click', () => {
   
   let choice = document.querySelector('input[name="choice"]:checked').value;
   
-  answerQuestion(cards[i], choice);
+  answerQuestion(current, choice);
 
-  if(i < (4) ){
-    i = i + 1;
-  }else{
-      let finish = document.getElementById('next');
-      finish.value = 'Você respondeu todas as questẽs!';
-  }
+  counter = counter + 1;
+
+  /* if(counter == max){
+    let next = document.getElementById('next');
+    next.classList.add('hidden');
+  } */
+
 }, false);
 
 //
 document.getElementById('next').addEventListener('click', ()=>{
-  nextQuestion(cards[i]);
+
+  current = cards[ getRandom(min, max) ];
+
+  nextQuestion(current);
+
+  counterElement.innerHTML = counter;
 }, false);

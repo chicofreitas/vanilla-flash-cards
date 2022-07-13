@@ -24,10 +24,12 @@ function prepareQuestion(){
   }
 
 /*  */
-function loadQuestion(card){
+function loadQuestion(card, counter){
   
     prepareQuestion();
-  
+    
+    
+
     titleField.innerHTML = card.title;
     descriptionField.innerHTML = card.description;
   
@@ -76,4 +78,11 @@ function answerQuestion(card, choice){
     messageField.innerHTML = messages[card.choices[choice].isCorrect];
 }
 
-export {prepareQuestion, loadQuestion, answerQuestion, nextQuestion}
+//
+function getRandom(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
+export {prepareQuestion, loadQuestion, answerQuestion, nextQuestion, getRandom}
