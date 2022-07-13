@@ -125,5 +125,69 @@ export let cards = [
                 },
             },
             comments: 'Art. 4o É <strong>proibida</strong> a prestação de serviços gratuitos, salvo os casos previstos em lei.'
+        },
+    
+        {
+            title: 'As atribuições do cargo podem justificar a exigência de outros requisitos estabelecidos em lei.',
+            description : 'Alguma descrição doida da segunda pergunta.',
+            choices : {
+                item1 :{
+                    text :'Certo',
+                    isCorrect: true,
+                },
+                item2 :{
+                    text :'Errado',
+                    isCorrect: false,
+                },
+            },
+            comments: 'Seção I </br> Disposições Gerais </br> Art. 5º. § 1o  As atribuições do cargo podem justificar a exigência de outros requisitos estabelecidos em lei.'
+        },
+    
+        {
+            title: 'As atribuições do cargo não justificam a exigência de outros requisitos estabelecidos em lei.',
+            description : 'Lei 8.112/90',
+            choices : {
+                item1 :{
+                    text :'Certo',
+                    isCorrect: false,
+                },
+                item2 :{
+                    text :'Errado',
+                    isCorrect: true,
+                },
+            },
+            comments: 'Seção I </br> Disposições Gerais </br> Art. 5º. § 1o  As atribuições do cargo <strong>podem justificar</strong> a exigência de outros requisitos estabelecidos em lei.'
+        },
+    
+        {
+            title: '§ 2o  Às pessoas portadoras de deficiência é assegurado o direito de se inscrever em concurso público para provimento de cargo cujas atribuições sejam compatíveis com a deficiência de que são portadoras; para tais pessoas serão reservadas até 20% (vinte por cento) das vagas oferecidas no concurso.',
+            description : 'Lei 8.112/90',
+            choices : {
+                item1 :{
+                    text :'Certo',
+                    isCorrect: true,
+                },
+                item2 :{
+                    text :'Errado',
+                    isCorrect: false,
+                },
+            },
+            comments: 'Seção I </br> Disposições Gerais </br> Art. 5º. § 2o  Às pessoas portadoras de deficiência é assegurado o direito de se inscrever em concurso público para provimento de cargo cujas atribuições sejam compatíveis com a deficiência de que são portadoras; para tais pessoas serão reservadas até 20% (vinte por cento) das vagas oferecidas no concurso.'
+        },
+    
+        {
+            title: 'Às pessoas portadoras de deficiência é assegurado o direito de se inscrever em concurso público para provimento de cargo cujas atribuições sejam compatíveis com a deficiência de que são portadoras; para tais pessoas serão reservadas até 5% (cinco por cento) das vagas oferecidas no concurso.',
+            description : 'Lei 8.112/90',
+            choices : {
+                item1 :{
+                    text :'Certo',
+                    isCorrect: false,
+                },
+                item2 :{
+                    text :'Errado',
+                    isCorrect: true,
+                },
+            },
+            comments: 'Seção I </br> Disposições Gerais </br> Art. 5º. § 2o  Às pessoas portadoras de deficiência é assegurado o direito de se inscrever em concurso público para provimento de cargo cujas atribuições sejam compatíveis com a deficiência de que são portadoras; para tais pessoas serão reservadas até <strong>20% (vinte por cento)</strong> das vagas oferecidas no concurso.'
         }
     ];

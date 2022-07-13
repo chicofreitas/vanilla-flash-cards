@@ -7,9 +7,9 @@ import {
   getRandom
 } from './src/components/Question/index'
 
-let i = 0;
 let current;
 let counter = 1;
+let counterMax = 10;
 let min = 0;
 let max = cards.length;
 
@@ -35,18 +35,21 @@ document.getElementById('answer').addEventListener('click', () => {
   
   answerQuestion(current, choice);
 
-  counter = counter + 1;
-
-  /* if(counter == max){
+  if(counter == counterMax){
     let next = document.getElementById('next');
     next.classList.add('hidden');
-  } */
+    let score = document.getElementById('score');
+    score.innerHTML = "Ufa!! Você acabou de responder " + counterMax + ' cartões.';
+    score.classList.toggle('hidden');
+  }
 
 }, false);
 
 //
 document.getElementById('next').addEventListener('click', ()=>{
 
+  counter = counter + 1;
+  
   current = cards[ getRandom(min, max) ];
 
   nextQuestion(current);
